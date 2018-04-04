@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+/* CSS v0.1 by djphil (CC-BY-NC-SA 4.0) */
+
+/**/
+.img-circle {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #cccccc;
+}
+
+/*toppanel_default.css*/
+.toppanel {
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    position:absolute;
+    top: 0px;
+}
+
+div.panel-wrapper {
+    background: #fdfdfd;
+    color: #222;
+    width: 250px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    /*box-shadow: 0px 1px 1px 1px #eee;*/
+    border-radius: 0px 0px 5px 5px;
+    padding: 1px 0px 5px 0px;
+    text-align: center;
+    display: none;
+}
+
+div.trigger-m {
+    position:relative;
+    background: #f7f7f7;
+    color: #AAA;
+    width: 55px;
+    height: 17px;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: center;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;      
+    border-radius: 0px 0px 5px 5px;
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+    /*box-shadow: 0px 1px 1px 1px #eee;*/
+}
+
+div.trigger-m:hover {background: rgba(0, 0, 0, 0.1); color: #222;}

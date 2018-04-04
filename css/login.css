@@ -1,0 +1,55 @@
+/* CSS v0.1 by djphil (CC-BY-NC-SA 4.0) */
+@CHARSET "UTF-8";
+
+.horizontal-login-form {margin-bottom: 10px;}
+
+.form-login,
+.form-forget,
+.form-register,
+.form-avatars {padding-bottom: 10px;}
+
+.form-login, .form-forget, .form-avatars, .form-register {
+    max-width: 350px;
+    margin: 0 auto;    
+}
+
+.form-login input, 
+.form-forget input {height: 35px;}
+
+
+/*MODELS*/
+/*input.radio-model {visibility: hidden; position: absolute;}*/
+select#model {margin-top: 5px;}
+div.model_hide {margin-top: 5px;}
+.label-model {;}
+.label-model {font-size: 10px;}
+.model img {max-width: 315px; max-height: 315px;}
+
+
+/* Dropdown menu animation */
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    max-height: 0;
+    /*display: block;*/
+    overflow: hidden;
+    opacity: 0;
+}
+
+/*.dropdown-menu .login {width: 250px !important;}*/
+.login {max-width: 250px !important;}
+.login {margin-bottom: 5px;}
+.login input {height: 35px;}
+.btn-padding-top {margin-top: 5px;}
+
+.dropdown.open .dropdown-menu {
+    max-height: 300px;
+    opacity: 1;
+}
+
+/* show/hide password */
+span.field-icon {;}
+

@@ -1,0 +1,85 @@
+<?php 
+session_start();
+header('Content-Type: text/html; charset=utf-8');
+ini_set('magic_quotes_gpc', 0);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+/*
+ * database
+ */
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "<DB PASS>";
+$dbname = "<DB NAME>";
+
+/*
+ * General
+ */
+ 
+$title = "OpenSim Register";
+$version = "0.1";
+$webmaster_uuid = "<ADMIN UUID>";
+$webmaster_email = "<ADMIN EMAIL>";
+// Problem to send email, uncomment the next line
+// ini_set(SMTP,'relay.<mailprovider>.<com>');
+
+$private_website = FALSE;
+$allow_registration = TRUE;
+$send_mail_to_user = TRUE;
+$send_mail_to_admin = TRUE;
+$invisible_antispam = TRUE;
+$display_forkme = TRUE;
+$display_jumbotron = TRUE;
+
+/*
+ * Cookie
+ */
+$cookie_name = 'osregister_remember_me';
+$cookie_time = (3600 * 24 * 30); // 30 days
+
+/*
+ * models
+ */
+// "<MODEL_UUID>" => "<MODEL_NAME>"
+// <MODEL_NAME> = Avatar Name = Folder Name
+$uuid_zero = "00000000-0000-0000-0000-000000000000";
+
+$models = [
+    "db0d49d4-c943-4562-9b9b-1bc271c80f9e" => "Default Male",
+    "649fd4ab-9d83-4f4e-a6be-fe69483b9418" => "Default Female",
+    "a57021dc-6b87-4e63-90cc-cd8af8da4a92" => "Default Hybrid"
+];
+
+$useTheme = TRUE;
+/* Navbar Style */
+// navbar
+// navbar-btn
+// navbar-form
+// navbar-left
+// navbar-right
+// navbar-default
+// navbar-inverse
+// navbar-collapse
+// navbar-fixed-top
+// navbar-fixed-bottom
+$CLASS_NAVBAR = "navbar navbar-default";
+$CLASS_ORDERBY_NAVBAR = "navbar navbar-default";
+
+/* Nav Style */
+// nav
+// nav-tabs
+// nav-pills
+// navbar-nav
+// nav-stacked
+// nav-justified
+$CLASS_NAV = "nav navbar-nav";
+$CLASS_ORDERBY_NAV = "nav navbar-nav";
+
+/*
+ *jumbotron
+ */
+// blue, green, orange, red
+$jumbotrom_color = "blue";
+$jumbotrom_class = "btn-primary";
+?>
