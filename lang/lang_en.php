@@ -58,11 +58,11 @@ $txt_ua_registrationoff_alert = "Registration is disabled, try again later";
 $txt_ua_emptyfield_alert = "Empty field(s), try again";
 $txt_ua_loginsuccess_alert = "You are connected succefully";
 $txt_ua_logoutsuccess_alert = "You are disconnected successfully";
-$txt_ua_wrongpass_alert = "Wrong password ...";
-$txt_ua_invalidpass_alert = "Invalid password ...";
-$txt_ua_idpassnomatch_alert = "ID/Password no match ...";
-$txt_ua_invalidid_alert = "Invalid ID ...";
-$txt_ua_invalidusername_alert = "Invalid username ...";
+$txt_ua_wrongpass_alert = "Wrong password";
+$txt_ua_invalidpass_alert = "Invalid password";
+$txt_ua_idpassnomatch_alert = "ID/Password no match";
+$txt_ua_invalidid_alert = "Invalid ID";
+$txt_ua_invalidusername_alert = "Invalid username";
 $txt_ua_unknowemail_alert= "Unknow email adress";
 
 /*My account*/
@@ -88,8 +88,8 @@ $txt_feature_createappearance = "Create Avatar Appearance";
 $txt_feature_changeresetpass = "Change/Reset Email/Password";
 $txt_feature_multilingual = "Multilingual website";
 $txt_feature_loginwithemail = "Login with username or email";
-$txt_feature_morecomingsoon = "More coming soon ...";
-$txt_feature_comingsoon = "Coming soon ...";
+$txt_feature_morecomingsoon = "More coming soon";
+$txt_feature_comingsoon = "Coming soon";
 
 /*Footer*/
 $txt_allrightreserved = "All rights reserved";
