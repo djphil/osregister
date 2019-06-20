@@ -10,9 +10,9 @@ How to create avatar appearance?
 The folder name must be the same like this account Firstname, Lastname.
 (eg: If avatar name is “Foo Bar”, the foler name is “Foo Bar”)
 3) Inside the folder “Foo Bar”
-3a) create the 4 new body parts (shape, skin, hair and eyes)
+3a) Create the 4 new body parts (shape, skin, hair and eyes)
 These 4 new body parts are mandatory.
-3b  create new clothes (Shirt, pants, shoes, etc …)
+3b) Create new clothes (Shirt, pants, shoes, etc …)
 4) Right clic on the folder “” and select “Remplace Current Outfit”
 (or double clic on each body parts and clothes to wear, you have choice …)
 5) Edit body parts and clothes at will to achieve desired appearance
