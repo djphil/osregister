@@ -127,9 +127,7 @@ if (empty($_SESSION['username']) ||
             <div class="panel-body">
                 <dl class="dl-horizontal">
                     <dt><i class="fa fa-tag"></i> Uuid:</dt>
-                    <dd>
-                        <p><?php echo $_SESSION['useruuid'] ?></p>
-                    </dd>
+                    <dd><p><?php echo $_SESSION['useruuid'] ?></p></dd>
 
                     <dt><i class="fa fa-leaf"></i> Level:</dt>
                     <dd><p><?php echo $_SESSION['userlevel'] ?></p></dd>

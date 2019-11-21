@@ -826,6 +826,50 @@ function copy_appearance($db, $PrincipalID, $Name, $Value)
     }
 }
 
+function search_inventoryID($db, $assetID, $avatarID, $parentFolderID)
+{
+    try {
+        $sql = $db->prepare("
+            SELECT inventoryID
+            FROM inventoryitems
+            WHERE assetID = ?
+            AND avatarID = ?
+            AND parentFolderID = ?
+        ");
+        $sql->bindValue(1, $assetID, PDO::PARAM_STR);
+        $sql->bindValue(2, $avatarID, PDO::PARAM_STR);
+        $sql->bindValue(3, $parentFolderID, PDO::PARAM_STR);
+        $sql->execute();
+
+        $inventoryID = "";
+        
+        if ($sql->rowCount() > 0)
+        {
+            while ($row = $sql->fetch(PDO::FETCH_ASSOC))
+            {
+                $inventoryID = $row['inventoryID'];
+            }
+        }
+
+        $sql->closeCursor();
+        $db = NULL;
+        return $inventoryID;
+    }
+
+    catch(PDOException $e) {
+        $message = '
+            <pre>
+                Unable to query database ...
+                Error code: '.$e->getCode().'
+                Error file: '.$e->getFile().'
+                Error line: '.$e->getLine().'
+                Error data: '.$e->getMessage().'
+            </pre>
+        ';
+        die($message);
+    }
+}
+
 function get_assetID_by_inventoryID($db, $avatarID, $inventoryID)
 {
     try {
@@ -906,7 +950,7 @@ function get_inventoryID_by_assetID($db, $avatarID, $assetID)
     }
 }
 
-function create_appearance($db, $from_uuid, $to_uuid)
+function create_appearance($db, $to_uuid, $from_uuid)
 {
     /*copy folder*/
     $model_name = username($db, $from_uuid);
@@ -921,7 +965,8 @@ function create_appearance($db, $from_uuid, $to_uuid)
 
     /*copy appearance*/
     $appearance = get_appearance($db, $from_uuid);
-    delete_appearance($db, $newAccountID);
+    // delete_appearance($db, $newAccountID);
+    delete_appearance($db, $to_uuid);
 
     foreach($appearance AS $key => $val)
     {
