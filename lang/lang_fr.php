@@ -10,8 +10,8 @@ $menu_help = "Aide";
 $menu_search = "Rechercher";
 
 /* Login Form */
-$txt_firstname = "Nom de l'avatar";
-$txt_lastname = "Prénom de l'avatar";
+$txt_firstname = "Prénom de l'avatar";
+$txt_lastname = "Nom de l'avatar";
 $txt_username = "Nom d'utilisateur";
 $txt_email = "Adresse email";
 $txt_newemail = "Nouvelle adresse email";
