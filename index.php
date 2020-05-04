@@ -1,4 +1,5 @@
 <?php if (session_status() == PHP_SESSION_NONE) {session_start();} ?>
+<?php include_once("inc/configcheck.php"); ?>
 <?php include_once("inc/config.php"); ?>
 <?php include_once("inc/PDO-mysql.php"); ?>
 <?php include_once("inc/functions.php"); ?>

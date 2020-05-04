@@ -55,7 +55,7 @@
             <?php echo $content; ?>
         </div>
 
-        <footer class="footer navbar navbar-default">
+        <footer class="footer <?php echo $CLASS_FOOTER_NAVBAR; ?>">
             <div class="container-fluid">
                 <div class="text-muted">
                     <div class="pull-right">
