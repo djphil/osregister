@@ -10,7 +10,7 @@
 /* GENERAL */
 function debug($variable)
 {
-	echo '<pre>' . print_r($variable, true) . '</pre>';
+	echo '<pre>'.print_r($variable, true).'</pre>';
 }
 
 function page_load_time()
@@ -48,7 +48,7 @@ function username($db, $uuid)
     try {
         $sql = $db->prepare("
             SELECT FirstName, LastName
-            FROM useraccounts
+            FROM ".TB_USERACCOUNTS."
             WHERE PrincipalID = ?
         ");
 
@@ -84,7 +84,7 @@ function get_userdatas_by_email($db, $email)
     try {
         $sql = $db->prepare("
             SELECT PrincipalID, FirstName, LastName
-            FROM useraccounts
+            FROM ".TB_USERACCOUNTS."
             WHERE Email = ?
         ");
 
@@ -120,7 +120,7 @@ function username_exist($db, $firstname, $lastname)
     try {
         $sql = $db->prepare("
             SELECT FirstName, LastName
-            FROM useraccounts
+            FROM ".TB_USERACCOUNTS."
             WHERE FirstName = ?
             AND LastName = ?
         ");
@@ -153,7 +153,7 @@ function email_exist($db, $email)
     try {
         $sql = $db->prepare("
             SELECT Email
-            FROM useraccounts
+            FROM ".TB_USERACCOUNTS."
             WHERE Email = ?
         ");
         $sql->bindValue(1, $email, PDO::PARAM_STR);
@@ -189,7 +189,7 @@ function verify_password($db, $uuid, $password)
     try {
         $sql = $db->prepare("
             SELECT UUID
-            FROM auth
+            FROM ".TB_AUTH."
             WHERE UUID = ?
             AND passwordHash = ?
             AND passwordSalt = ?
@@ -224,7 +224,7 @@ function change_password($db, $uuid, $password)
 
     try {
         $sql = $db->prepare("
-            UPDATE auth
+            UPDATE ".TB_AUTH."
             SET passwordHash = ?,
                 passwordSalt = ?
             WHERE UUID = ?
@@ -257,7 +257,7 @@ function create_useraccount($db, $uuid, $firstname, $lastname, $email)
 {
     try {
         $sql = $db->prepare("
-            INSERT INTO useraccounts (
+            INSERT INTO ".TB_USERACCOUNTS." (
                 PrincipalID, 
                 ScopeID, 
                 FirstName, 
@@ -315,7 +315,7 @@ function create_userauth($db, $uuid, $password)
 
     try {
         $sql = $db->prepare("
-            INSERT INTO auth (
+            INSERT INTO ".TB_AUTH." (
                 UUID, 
                 passwordHash, 
                 passwordSalt, 
@@ -357,7 +357,7 @@ function create_griduser($db, $uuid)
 {
     try {
         $sql = $db->prepare("
-            INSERT INTO griduser (
+            INSERT INTO ".TB_GRIDUSER." (
                 UserID, 
                 HomeRegionID, 
                 HomePosition, 
@@ -453,7 +453,7 @@ function create_inventory($db, $uuid)
 
         try {
             $sql = $db->prepare("
-                INSERT INTO inventoryfolders (
+                INSERT INTO ".TB_INVENTORYFOLDERS." (
                     folderName, 
                     type, 
                     version, 
@@ -501,7 +501,7 @@ function get_folder_uuid($db, $agentID, $folderName)
     try {
         $sql = $db->prepare("
             SELECT folderID
-            FROM inventoryfolders
+            FROM ".TB_INVENTORYFOLDERS."
             WHERE agentID = ?
             AND folderName = ?
         ");
@@ -541,7 +541,7 @@ function get_folder_items($db, $avatarID, $folder_uuid)
     try {
         $sql = $db->prepare("
             SELECT *
-            FROM inventoryitems
+            FROM ".TB_INVENTORYITEMS."
             WHERE avatarID = ?
             AND parentFolderID = ?
         ");
@@ -583,7 +583,7 @@ function create_folder($db, $folderName, $agentID, $parentFolder)
 
     try {
         $sql = $db->prepare("
-            INSERT INTO inventoryfolders (
+            INSERT INTO ".TB_INVENTORYFOLDERS." (
                 folderName,
                 type,                
                 version, 
@@ -630,7 +630,7 @@ function copy_items($db, $newAccountID, $items, $parentFolderID)
 {
     try {
         $sql = $db->prepare("
-            INSERT INTO inventoryitems (
+            INSERT INTO ".TB_INVENTORYITEMS." (
                 assetID, 
                 assetType, 
                 inventoryName,
@@ -726,7 +726,7 @@ function get_appearance($db, $PrincipalID)
     try {
         $sql = $db->prepare("
             SELECT Name, Value
-            FROM avatars
+            FROM ".TB_AVATARS."
             WHERE PrincipalID = ?
         ");
         $sql->bindValue(1, $PrincipalID, PDO::PARAM_STR);
@@ -765,7 +765,7 @@ function delete_appearance($db, $PrincipalID)
 {
     try {
         $sql = $db->prepare("
-            DELETE FROM avatars
+            DELETE FROM ".TB_AVATARS."
             WHERE PrincipalID = :PrincipalID
         ");
         $sql->bindValue(':PrincipalID', $PrincipalID, PDO::PARAM_STR);
@@ -792,7 +792,7 @@ function copy_appearance($db, $PrincipalID, $Name, $Value)
 {
     try {
         $sql = $db->prepare("
-            INSERT INTO avatars (
+            INSERT INTO ".TB_AVATARS." (
                 PrincipalID, 
                 Name, 
                 Value
@@ -831,7 +831,7 @@ function search_inventoryID($db, $assetID, $avatarID, $parentFolderID)
     try {
         $sql = $db->prepare("
             SELECT inventoryID
-            FROM inventoryitems
+            FROM ".TB_INVENTORYITEMS."
             WHERE assetID = ?
             AND avatarID = ?
             AND parentFolderID = ?
@@ -875,7 +875,7 @@ function get_assetID_by_inventoryID($db, $avatarID, $inventoryID)
     try {
         $sql = $db->prepare("
             SELECT assetID
-            FROM inventoryitems
+            FROM ".TB_INVENTORYITEMS."
             WHERE avatarID = ? 
             AND inventoryID = ?
         ");
@@ -915,7 +915,7 @@ function get_inventoryID_by_assetID($db, $avatarID, $assetID)
     try {
         $sql = $db->prepare("
             SELECT inventoryID 
-            FROM inventoryitems
+            FROM ".TB_INVENTORYITEMS."
             WHERE avatarID = ? 
             AND assetID = ?
         ");
@@ -1086,7 +1086,7 @@ function send_email_to_admin($uuid, $firstname, $lastname, $email, $title, $webm
 function change_email($db, $uuid, $email)
 {
     $sql = $db->prepare("
-        UPDATE useraccounts
+        UPDATE ".TB_USERACCOUNTS."
         SET Email = ?
         WHERE PrincipalID = ?
     ");

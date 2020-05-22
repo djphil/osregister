@@ -13,10 +13,17 @@ $dbuser = "root";
 $dbpass = "<DB PASS>";
 $dbname = "<DB NAME>";
 
+// OpenSim tables (Robust)
+define('TB_USERACCOUNTS', $dbname.'.UserAccounts');
+define('TB_AUTH', $dbname.'.auth');
+define('TB_GRIDUSER', $dbname.'.GridUser');
+define('TB_INVENTORYFOLDERS', $dbname.'.inventoryfolders');
+define('TB_INVENTORYITEMS', $dbname.'.inventoryitems');
+define('TB_AVATARS', $dbname.'.avatars');
+
 /*
  * General
  */
- 
 $title = "OpenSim Register";
 $version = "0.1";
 $webmaster_uuid = "<ADMIN UUID>";
