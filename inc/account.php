@@ -58,11 +58,7 @@ if (empty($_SESSION['username']) ||
     empty($_SESSION['email']) || 
     empty($_SESSION['password']) || 
     empty($_SESSION['created']) ||
-    empty($_SESSION['useruuid']) ||
-    // empty($_SESSION['userlevel']) ||
-    // empty($_SESSION['userflags']) ||
-    empty($_SESSION['usertitle']) ||
-    empty($_SESSION['active'])) {
+    empty($_SESSION['useruuid'])) {
     header("Location: ?page=logout"); 
     exit();
 }
