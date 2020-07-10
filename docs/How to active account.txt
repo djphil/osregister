@@ -1,0 +1,17 @@
+OSREGISTER
+==========
+osregister is a Free user account registration Web Interface for OpenSimulator community.
+You need OpenSimulator v0.9.x to use it.
+
+How to active account?
+======================
+The UserAccount "active" field Indicates if the user account is active.
+NOTE: This field was added in 0.8.0-post-fixes.
+
+en-GB
+During registration, the accounts are deactivated by default and you must activate them manually in the UserAccount database.
+If you want automatic silk activation you must modify the 0 to 1 in the functions.php file on line 284.
+
+fr-BE
+Lors de l'inscription, les comptes sont désactivés par défaut et vous devez les activer manuellement dans la nase de données UserAccount.
+Si vous souhaitez que l'activation soie automatique vous devez modifier les 0 en 1 dans le fichier functions.php à la ligne 284.
