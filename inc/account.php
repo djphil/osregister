@@ -57,8 +57,9 @@ if (isset($_POST['changepass']))
 if (empty($_SESSION['username']) || 
     empty($_SESSION['email']) || 
     empty($_SESSION['password']) || 
-    empty($_SESSION['created']) ||
-    empty($_SESSION['useruuid'])) {
+    empty($_SESSION['created']) || 
+    empty($_SESSION['useruuid']) || 
+    empty($_SESSION['active'])) {
     header("Location: ?page=logout"); 
     exit();
 }
