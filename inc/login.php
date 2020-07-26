@@ -51,7 +51,7 @@ if (isset($_POST['login']))
 
         $sql = $db->prepare("
             SELECT *
-            FROM useraccounts
+            FROM ".TB_USERACCOUNTS."
             WHERE FirstName = ?
             AND LastName = ?
         ");
@@ -75,7 +75,7 @@ if (isset($_POST['login']))
                 {
                     $sql = $db->prepare("
                         SELECT *
-                        FROM auth
+                        FROM ".TB_AUTH."
                         WHERE UUID = ?
                     ");
                     $sql->bindValue(1, $PrincipalID, PDO::PARAM_STR);
